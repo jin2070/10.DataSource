@@ -1,0 +1,7 @@
+1,打开MAC 文本编辑，打开时什么也不用动，
+2，输入任何数字和文字
+3，保存时用UTF8 或UTF16保存，其他的类型都不可以
+
+导入时UTF8     NSUTF8StringEncoding
+导入时UTF816  NSUTF16StringEncoding  或NSUnicodeStringEncoding
+其他的不要乱选

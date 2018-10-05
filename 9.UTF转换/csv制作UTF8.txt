@@ -1,0 +1,6 @@
+Make a csv of UTF-8;
+
+1.windows->Excel make table->save by csv  (excel表格不可以拼接合并)
+2.send file to Mac by mail
+3.Open the csv file by Numbers
+4.Then output file by CSV file with UTF8 coding

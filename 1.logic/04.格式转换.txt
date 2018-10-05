@@ -1,0 +1,45 @@
+NSInteger转化 NSString类型：
+      [ NSString  stringWithFormat:  @"%d" ,
+ NSInteger];
+NSString转化 NSInteger类型：
+      NSInteger = [ NSString   intValue ]
+
+---------------------
+ NSString *teststring
+ = @"32.54" ;
+
+    int i
+ = [teststring intValue ];
+
+    float i1
+ = [teststring floatValue ];
+
+    double i2
+ = [teststring doubleValue ];
+
+    NSInteger i3
+ = [teststring integerValue ];
+
+    
+
+    NSString *tostring
+ = nil ;
+
+    tostring
+ = [ NSString stringWithFormat: @"%d" ,i];
+
+    NSLog ( @"tostring-int:%@",tostring);
+
+    tostring
+ = [ NSString stringWithFormat: @"%.3f" ,i1];
+
+    NSLog ( @"tostring-float:%@",tostring);
+
+    tostring
+ = [ NSString stringWithFormat: @"%e" ,i2];
+
+    NSLog ( @"tostring-double:%@",tostring);
+
+---------------------
+
+本文来自 卤海虾 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/haixialu/article/details/16967903?utm_source=copy 

@@ -1,12 +1,8 @@
-Make a csv of UTF-8;
 
-1.windows->Excel make table->save by txt file-> txt file was saved by UTF8 file;  Ok
-2.open UTF8file txt by Excel->save by csv; Ok
-3.Mac->sqlite->import->output(anyone txt or csv); that's Ok.
 
 pcdeMacBook-Air:documents pc$ sqlite3 test01.sqlite
 
-sqlite> .mode list
+sqlite> .mode list (.mode line)
 sqlite> select *from cat;
 
 sqlite> .separator ","
