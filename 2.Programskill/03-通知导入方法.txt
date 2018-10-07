@@ -1,0 +1,32 @@
+正常通知方法
+1.发送
+{  
+ NSDictionary* dict = nil;
+    dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:UISwipeGestureRecognizerDirectionLeft] forKey:@"direction"];
+    
+    if (dict)
+        [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"%@%@", @"swipeNotify", self.booksName] object:self userInfo:dict];
+}
+
+2.1 接收方制作接收台初始化
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(swipeNotify:) name:[NSString stringWithFormat:@"%@%@", @"swipeNotify", self.booksName] object:nil];
+2.2接收方执行与调出userinfo方法
+- (void)swipeNotify:(NSNotification *)notification
+{
+	NSNumber *direction = [notification.userInfo objectForKey:@"direction"];
+            }
+
+控件通知方法
+1.设定通知触发器
+ [ScrollView addObserver:self forKeyPath:scrollViewContentOffset options:NSKeyValueObservingOptionNew context:nil];
+2.接收通知
+ (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (object == self.bridgeScrollView) {
+        if ([keyPath isEqualToString:scrollViewContentOffset]) {
+            // 当scrolllView滚动时,让跟踪器跟随scrollView滑动
+            [self beginMoveTrackerFollowScrollView:self.bridgeScrollView];
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
